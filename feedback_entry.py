@@ -1,17 +1,12 @@
-def collect_feedback():
-  """Collects student feedback through simple text input."""
+# feedback_entry.py
 
-  feedback = {}
-  num_students = int(input("Enter the number of students providing feedback: "))
+feedback_data = []
 
-  for i in range(1, num_students + 1):
-    student_name = input(f"Enter the name of student {i}: ")
-    comment = input(f"Enter feedback for {student_name}: ")
-    feedback[student_name] = comment
-
-  print("\n--- Feedback Collected ---")
-  for name, comment in feedback.items():
-    print(f"{name}: {comment}")
-
-if _name_ == "_main_":
-  collect_feedback()
+def add_feedback(student_name, subject, score):
+    feedback = {
+        "name": student_name,
+        "subject": subject,
+        "score": score
+    }
+    feedback_data.append(feedback)
+    return feedback
